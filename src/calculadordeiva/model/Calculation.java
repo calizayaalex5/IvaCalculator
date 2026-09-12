@@ -28,6 +28,6 @@ public class Calculation {
     
     @Override
     public String toString() {
-        return String.format("Price: %.2f | IVA: %.2f | Total: %.2f", price, ivaAmount, result);
+        return String.format("Price: $%.2f | IVA: $%.2f | Total: $%.2f", price, ivaAmount, result);
     }
 }

@@ -1,4 +1,12 @@
-Price: 12333.00 | IVA: 2343.27 | Total: 14676.27
-Price: 20000000.00 | IVA: 3800000.00 | Total: 23800000.00
-Price: 1000000.00 | IVA: 190000.00 | Total: 1190000.00
-Price: 199.99 | IVA: 38.00 | Total: 237.99
+Price: $20000.00 | IVA: $3800.00 | Total: $23800.00
+Price: $230.00 | IVA: $43.70 | Total: $273.70
+Price: $302.00 | IVA: $57.38 | Total: $359.38
+Price: $1230.00 | IVA: $233.70 | Total: $1463.70
+Price: $2330.00 | IVA: $442.70 | Total: $2772.70
+Price: $1190.00 | IVA: $226.10 | Total: $1416.10
+Price: $20.00 | IVA: $3.80 | Total: $23.80
+Price: $20.00 | IVA: $3.80 | Total: $23.80
+Price: $120.00 | IVA: $22.80 | Total: $142.80
+Price: $12.20 | IVA: $2.32 | Total: $14.52
+Price: $20.34 | IVA: $3.86 | Total: $24.20
+Price: $12.24 | IVA: $2.33 | Total: $14.56

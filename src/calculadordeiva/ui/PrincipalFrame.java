@@ -17,9 +17,37 @@ public class PrincipalFrame extends javax.swing.JFrame {
      */
     public PrincipalFrame() {
         initComponents();
+
+        getContentPane().setBackground(new java.awt.Color(24, 24, 24));
+        getRootPane().setDefaultButton(btnCalculate);
+        
+        label1.setForeground(java.awt.Color.WHITE);
+        label1.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 16));
+
+        txtPrice.setBackground(new java.awt.Color(45, 45, 45));
+        txtPrice.setForeground(java.awt.Color.WHITE);
+        txtPrice.setCaretColor(java.awt.Color.WHITE);
+        txtPrice.setFont(new java.awt.Font("SansSerif", java.awt.Font.PLAIN, 18));
+
+        btnCalculate.setBackground(java.awt.Color.WHITE);
+        btnCalculate.setForeground(java.awt.Color.BLACK);
+        btnCalculate.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 14));
+
+        txtHistorial.setBackground(new java.awt.Color(45, 45, 45));
+        txtHistorial.setForeground(new java.awt.Color(230, 190, 140));
+        txtHistorial.setFont(new java.awt.Font("Monospaced", java.awt.Font.BOLD, 14));
+        txtHistorial.setLineWrap(true);
+        txtHistorial.setWrapStyleWord(true);
+        
+        titleLabel.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 24));
+        titleLabel.setForeground(java.awt.Color.WHITE);
+        
+        setTitle("Calculadora de IVA");
+        setSize(550, 700);
+
         ivaCalculator = new IVACalculator();
         ivaCalculator.readHistorial();
-        
+
         for (Calculation c : ivaCalculator.getHistorial()) {
             txtHistorial.append(c.toString() + "\n");
         }
@@ -35,10 +63,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         btnCalculate = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
         txtPrice = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtHistorial = new javax.swing.JTextArea();
+        titleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,45 +78,48 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Price:");
+        label1.setText("Price:");
 
         txtHistorial.setColumns(20);
         txtHistorial.setRows(5);
         jScrollPane1.setViewportView(txtHistorial);
+
+        titleLabel.setText("IVA CALCULATOR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(label1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCalculate)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGap(150, 150, 150)
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCalculate)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap()
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalculate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -96,17 +128,26 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
         // TODO add your handling code here:
         String texto = txtPrice.getText();
-        double price = Double.parseDouble(texto);
-        
-        ivaCalculator.addCalculation(price);
-        ivaCalculator.saveHistorial();
-        
-        txtHistorial.setText("");
-        for (Calculation c : ivaCalculator.getHistorial()) {
-            txtHistorial.append(c.toString() + "\n");
+    
+        try {
+            double price = Double.parseDouble(texto);
+
+            ivaCalculator.addCalculation(price);
+            ivaCalculator.saveHistorial();
+
+            txtHistorial.setText("");
+            for (Calculation c : ivaCalculator.getHistorial()) {
+                txtHistorial.append(c.toString() + "\n");
+            }
+
+            txtPrice.setText("");
+
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Please, write a valid number.", 
+                "Error", 
+                javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-        
-        txtPrice.setText("");
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     /**
@@ -148,8 +189,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JTextArea txtHistorial;
     private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables

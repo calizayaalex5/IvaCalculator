@@ -64,11 +64,13 @@ public class IVACalculator {
             String line;
             
             while ((line = reader.readLine()) != null) {
-                
+    
                 String[] parts = line.split(" \\| ");
                 String[] priceParts = parts[0].split(": ");
-                double price = Double.parseDouble(priceParts[1]);
+                String textoLimpio = priceParts[1].replace("$", "");
+                double price = Double.parseDouble(textoLimpio);
                 addCalculation(price);
+                
             }
             
         } catch (IOException e) {
