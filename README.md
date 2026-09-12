@@ -29,6 +29,8 @@ I developed this project using **NetBeans IDE**, including its built-in visual G
 - [Oracle Java Documentation](https://docs.oracle.com/en/java/)
 - [W3Schools Java Tutorial](https://www.w3schools.com/java/)
 - [Apache NetBeans Documentation](https://netbeans.apache.org/front/main/documentation/)
+- [Youtube - CURSO GRATIS JAVA PARA PRINCIPIANTES ☕👩🏻‍💻 By TodoCode](https://youtu.be/qxXcI56NfnE?si=FjAENDp3GnVrpPan)
+- [Codedex - Course of Java](https://www.codedex.io/java)
 
 # Future Work
  
